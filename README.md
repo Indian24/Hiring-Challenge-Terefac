@@ -57,17 +57,13 @@ Expected Accuracy: ≥ 85%
 
 # Deliverables
 
-Data loading pipeline
-
-Trained baseline model
-
-Test accuracy metric
-
-Training & validation curves
+1. Data loading pipeline
+2.Trained baseline model
+3. Test accuracy metric
+4. Training & validation curves
 
 Evaluation
-
-# Pass if accuracy ≥ 85%
+Pass if accuracy ≥ 85%
 # LEVEL 2: Intermediate Techniques
 
 Objective: Improve baseline performance using advanced techniques
@@ -80,22 +76,18 @@ Regularization
 
 Hyperparameter tuning
 
-Expected Accuracy: ≥ 90%
+# Expected Accuracy: ≥ 90%
 
 # Deliverables
 
-Augmentation pipeline
+1.Augmentation pipeline
+2.Ablation study (with vs without augmentation)
+3.Accuracy comparison table
+4.Performance analysis document
 
-Ablation study (with vs without augmentation)
-
-Accuracy comparison table
-
-Performance analysis document
-
-Evaluation
-
+# Evaluation
 Must demonstrate measurable improvement
-
+A two-stage training strategy was used to improve CIFAR-10 classification performance. In Stage-1, strong data augmentation and MixUp were applied while training the classifier head, which improved validation accuracy to ~92.5%. However, further training led to saturation. In Stage-2, the model was fine-tuned end-to-end using lighter augmentations and a lower learning rate, resulting in a significant performance gain and a peak validation accuracy of 95.7%.
 # LEVEL 3: Advanced Architecture Design
 
 Objective: Design a custom or advanced architecture
@@ -108,19 +100,18 @@ Expected Accuracy: ≥ 91%
 
 # Deliverables
 
-Architecture design explanation
-
-Custom model implementation
-Per-class accuracy and confusion matrix
-Interpretability (Grad-CAM / saliency maps)
-Key insights and observations
+1.Architecture design explanation
+2. Custom model implementation
+3.Per-class accuracy and confusion matrix
+4.Interpretability (Grad-CAM / saliency maps)
+5.Key insights and observations
 
 # Evaluation
 
 Strong architectural justification
 Meaningful interpretability analysis
 
-# LEVEL 4: Expert Techniques (Shortlist Threshold)
+# LEVEL 4: Expert Techniques 
 
 Objective: Achieve near state-of-the-art performance
 
@@ -141,33 +132,6 @@ Novel insights
 # Evaluation
 Research depth and clarity
 Publication-quality documentation
-
-# LEVEL 5: Research / Production System
-
-Objective: Build a production-ready, optimized vision system
-
-Approach
-Knowledge distillation
-Model compression and pruning
-INT8 quantization
-Uncertainty estimation
-Real-time inference optimization
-Expected Accuracy: ≥ 95%
-
-# Deliverables
-
-Compressed student model
-Quantized INT8 model
-Inference latency < 100 ms
-Complete deployment pipeline
-Technical documentation
-
-# Evaluation
-
-Fully deployable system
-Strong accuracy–performance trade-off analysis
-Original Dataset: https://www.cs.toronto.edu/~kriz/cifar.html
-The dataset supports automatic download and is natively available in PyTorch, TensorFlow, and Keras.
 
 # 🛠️ Tech Stack
 
