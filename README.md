@@ -64,6 +64,9 @@ Expected Accuracy: ≥ 85%
 
 Evaluation
 Pass if accuracy ≥ 85%
+
+# Colab Link:
+https://colab.research.google.com/drive/1MBBx5bhc4_OFgHj7oVW5FCNlD-yiSq46?usp=sharing
 # LEVEL 2: Intermediate Techniques
 
 Objective: Improve baseline performance using advanced techniques
@@ -89,6 +92,9 @@ Hyperparameter tuning
 Must demonstrate measurable improvement
 A two-stage training strategy was used to improve CIFAR-10 classification performance. In Stage-1, strong data augmentation and MixUp were applied while training the classifier head, which improved validation accuracy to ~92.5%. However, further training led to saturation. In Stage-2, the model was fine-tuned end-to-end using lighter augmentations and a lower learning rate, resulting in a significant performance gain and a peak validation accuracy of 95.7%.
 
+# Colab Link
+https://colab.research.google.com/drive/1SGw96OxxcLhKfvxllA4AKFo8RH49bbqC?usp=sharing
+
 # LEVEL 3: Advanced Architecture Design
 
 Objective: Design a custom or advanced architecture
@@ -112,6 +118,9 @@ Expected Accuracy: ≥ 91%
 Strong architectural justification
 Meaningful interpretability analysis
 
+# Colab Link
+https://colab.research.google.com/drive/1EpSJs8627GmuKOln0sbies6deRyDLnYg?usp=sharing
+
 # LEVEL 4: Expert Techniques 
 
 Objective: Achieve near state-of-the-art performance
@@ -133,6 +142,9 @@ Novel insights
 # Evaluation
 Research depth and clarity
 Publication-quality documentation
+
+# Colab Link
+https://colab.research.google.com/drive/12-LbKhmL7SYjYeTtdz1QNRp4FEyBwoHD?usp=sharing
 
 # 🛠️ Tech Stack
 
