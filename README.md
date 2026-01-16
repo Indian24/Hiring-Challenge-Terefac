@@ -88,6 +88,7 @@ Hyperparameter tuning
 # Evaluation
 Must demonstrate measurable improvement
 A two-stage training strategy was used to improve CIFAR-10 classification performance. In Stage-1, strong data augmentation and MixUp were applied while training the classifier head, which improved validation accuracy to ~92.5%. However, further training led to saturation. In Stage-2, the model was fine-tuned end-to-end using lighter augmentations and a lower learning rate, resulting in a significant performance gain and a peak validation accuracy of 95.7%.
+
 # LEVEL 3: Advanced Architecture Design
 
 Objective: Design a custom or advanced architecture
