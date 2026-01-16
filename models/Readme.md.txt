@@ -7,7 +7,7 @@ Level-wise Google Colab notebooks:
 
 - Level1.ipynb → https://colab.research.google.com/drive/1MBBx5bhc4_OFgHj7oVW5FCNlD-yiSq46?usp=sharing
 - Level2.ipynb → https://colab.research.google.com/drive/1SGw96OxxcLhKfvxllA4AKFo8RH49bbqC?usp=sharing
-- Level3.ipynb → 
+- Level3.ipynb → https://colab.research.google.com/drive/1UG9xYBAA8Emy6Ua-tIKWEvMKGmCLvzEi?usp=sharing
 - Level4.ipynb → https://colab.research.google.com/drive/12-LbKhmL7SYjYeTtdz1QNRp4FEyBwoHD?usp=sharing
 
 Each notebook contains code to save the best-performing model
@@ -15,3 +15,4 @@ using torch.save(model.state_dict(), path).
 
 Hardware: Google Colab GPU
 Framework: PyTorch
+
