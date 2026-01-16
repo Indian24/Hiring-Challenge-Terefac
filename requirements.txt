@@ -1,3 +1,4 @@
+# import modules
 torch
 torchvision
 numpy
@@ -7,3 +8,103 @@ tqdm
 
 
 pip install -r requirements.txt
+
+🔹 LEVEL 1: Baseline Model (Transfer Learning)
+Approach Taken
+
+A baseline image classifier was built using transfer learning with a pretrained ResNet-50 model. The pretrained backbone was used to leverage rich visual features learned from ImageNet, while the final classification layer was adapted for CIFAR-10.
+
+Model Architecture & Reasoning
+1. Backbone: ResNet-50 (pretrained)
+Modified final fully connected layer → 10 output classes
+Earlier layers frozen initially to stabilize training
+Fine-tuning applied in later epochs
+
+Reasoning:
+Transfer learning significantly reduces training time and improves generalization on small-resolution datasets like CIFAR-10.
+
+Key Design Decisions:
+1.Used pretrained weights to accelerate convergence
+2. Resized CIFAR-10 images to match ResNet input
+3. Adam optimizer with moderate learning rate
+4. Cross-entropy loss for multi-class classification
+
+Observed Failure Cases / Limitations
+1. Confusion between visually similar classes (e.g., Cat vs Dog)
+2. Limited adaptation to small image resolution
+
+🔹 LEVEL 2: Intermediate Techniques
+Approach Taken
+Performance was improved using data augmentation, regularization, and hyperparameter tuning while retaining the baseline architecture.
+
+Model Architecture & Reasoning
+Same backbone (ResNet-50)
+Training pipeline enhanced with augmentation
+Regularization added to improve generalization
+Key Design Decisions
+
+Data Augmentation:
+1.Random crop
+2.Horizontal flip
+3.Normalization
+4.Regularization:
+5. Dropout
+
+Weight decay
+1.Learning rate tuning and scheduler usage
+2.Conducted ablation study (with vs without augmentation)
+3.Observed Failure Cases / Limitations
+4.Diminishing returns after extensive augmentation
+5.Slight instability with high learning rates
+6.Some classes still underperform due to limited resolution
+
+🔹 LEVEL 3: Advanced Architecture Design
+Approach Taken
+A custom CNN architecture was designed, incorporating attention mechanisms to focus on discriminative regions in images.
+
+Model Architecture & Reasoning
+1.Custom multi-block CNN
+2.Channel attention module (SE / CBAM-style)
+3.Adaptive pooling for resolution robustness
+4.Improved feature extraction for fine-grained classes
+
+Reasoning:
+Custom architectures allow better control over feature learning for small images compared to large pretrained models.
+
+Key Design Decisions
+1.Attention to enhance important feature channels
+2.Adaptive Average Pooling to avoid shape mismatch
+3.Per-class performance evaluation
+4.Grad-CAM used for interpretability
+
+Observed Failure Cases / Limitations
+1.Higher training time compared to baseline
+2.Attention sometimes amplifies background noise
+3.Requires careful hyperparameter tuning
+
+🔹 LEVEL 4: Expert Techniques (Shortlist Threshold)
+Approach Taken
+An ensemble learning strategy was implemented by combining predictions from multiple high-performing models to improve robustness and accuracy.
+
+Model Architecture & Reasoning
+Ensemble of:
+
+Transfer learning model
+Custom CNN
+Attention-based model
+Final prediction via soft voting
+
+Reasoning:
+Ensembles reduce variance and compensate for individual model weaknesses.
+
+Key Design Decisions
+1.Trained multiple independent models
+2.Implemented voting-based ensemble strategy
+3.Comparative evaluation against single models
+4.Detailed experimental documentation
+
+Observed Failure Cases / Limitations
+1.Increased computational and memory cost
+2.Longer training and inference time
+3.More complex pipeline to maintain
+4.Slight overfitting without augmentation
